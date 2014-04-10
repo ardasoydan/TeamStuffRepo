@@ -1,7 +1,0 @@
-include LICENSE
-include README.rst
-recursive-include teamstuffapp/static/css *
-recursive-include teamstuffapp/static/fonts *
-recursive-include teamstuffapp/static/js *
-recursive-include teamstuffapp/templates *
-recursive-include teamstuffapp/Docs *
