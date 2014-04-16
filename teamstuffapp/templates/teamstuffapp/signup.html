@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up Bro! {% endblock %}
+<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="signin.css" rel="stylesheet">
+{% block bootstrap3_content %}
+<div class="container">
+    <form class="form-signin" role="form" action="/homepage/" method="post">{% csrf_token %}
+      <h2 class="form-signin-heading">Sign Up Madafakaaaaa</h2>
+      <input type="firstname" class="form-control" placeholder="First Name" required autofocus>
+      <input type="email" class="form-control" placeholder="Email address" required autofocus>
+      <input type="password" class="form-control" placeholder="Password" required> 
+      <label class="checkbox">
+	<input type="checkbox" value="remember-me"> Remember me </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+</div>
+{% endblock %}

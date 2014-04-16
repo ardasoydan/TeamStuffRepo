@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -7,25 +8,22 @@ from django import forms
 
     
 
-class User(models.Model):
+class TeamStuffUser(models.Model):
 
     USER_TYPE_CHOICES = (
         ('PLR', 'Player'),
         ('MAN', 'Manager'),
         ('PAR', 'Parent'),
 )
-
-    user_name = models.CharField(max_length = 50)
-    email = forms.EmailField()
-    password =models.CharField(max_length = 20)
-    birth_date = models.DateTimeField('birth date')
+    user= models.OneToOneField(User)
+    birth_date = models.DateField(auto_now = False, auto_now_add = False)
     user_type = models.CharField(max_length = 3, choices = USER_TYPE_CHOICES,
                                  default = 'MAN')
     def __unicode__(self):
-        return unicode(self.user_name)
+        return unicode(self.username)
 
 class Team(models.Model):
-    user = models.ForeignKey(User)
+    player = models.ForeignKey(TeamStuffUser)
     team_name = models.CharField(max_length = 50)
     sport = models.CharField(max_length = 20)
     club_name = models.CharField(max_length = 40)

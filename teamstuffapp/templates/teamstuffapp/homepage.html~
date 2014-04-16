@@ -1,7 +1,6 @@
-{% extends 'teamstuffapp/base.html' %}
+{% extends 'base.html' %}
+ 
+{% block title %}TeamStuff HomePage {% endblock %}
+ 
+{% block content %} <h3 class="masthead-brand">{{ email }}</h3> {% endblock %}
 
-{% block title %}django-bootstrap3{% endblock %}
-
-{% block content %}
-    This is <em>bootstrap3</em> for <strong>Django</strong>.
-{% endblock %}
